@@ -1,0 +1,97 @@
+import java.text.DecimalFormat;
+import java.util.*;
+public class Day1A3{
+	public static void main(String[] args) {
+		int inn1[]={6,1,0,6,4,2,2,2,4,0,6,0,2,2,1,1,0,1,1,2,0,0,4,0,1,2,4,4,6,2};
+		int inn2[]={1,0,0,6,4,2,2,2,4,0,0,0,6,1,6,3,0,2,1,3,0,1,4,0,1,2,1,0,6,2};
+		int inn3[]={1,1,2,6,4,2,1,2,1,0,0,0,6,1,1,3,0,2,1,2,0,0,4,0,1,2,4,4,6,2};
+		int inn4[]={0,1,0,1,4,2,6,3,4,0,0,0,6,1,1,3,0,1,1,2,0,0,1,0,1,2,4,1,6,2};
+		int inn5[]={2,0,0,6,0,2,4,2,4,6,2,0,0,1,0,3,0,2,1,3,0,0,3,0,6,2,4,1,6,2};
+		int t1=0,t2=0,t3=0,t4=0,t5=0;
+		for(int i=0;i<inn1.length;i++) {
+			t1+=inn1[i];
+		}
+		for(int i=0;i<inn2.length;i++) {
+			t2+=inn2[i];
+		}
+		for(int i=0;i<inn3.length;i++) {
+			t3+=inn3[i];
+		}
+		for(int i=0;i<inn4.length;i++) {
+			t4+=inn4[i];
+		}
+		for(int i=0;i<inn5.length;i++) {
+			t5+=inn5[i];
+		}
+		DecimalFormat dec = new DecimalFormat("0.00");
+		int tot=t1+t2+t3+t4+t5;
+		float avg=(t1+t2+t3+t4+t5)/5;
+		int zero=0,one=0,two=0,three=0,four=0,six=0;
+		System.out.println("Average Score of last 5 matches : "+dec.format(avg));
+		System.out.println("Total number of runs scored in five matches : "+tot);
+		for(int i=0;i<inn1.length;i++) {
+			switch(inn1[i]) {
+			case 0: zero++;break;
+			case 1: one++;break;
+			case 2: two++;break;
+			case 3: three++;break;
+			case 4: four++;break;
+			case 6: six++;break;
+			}
+		}
+		for(int i=0;i<inn2.length;i++) {
+			switch(inn2[i]) {
+			case 0: zero++;break;
+			case 1: one++;break;
+			case 2: two++;break;
+			case 3: three++;break;
+			case 4: four++;break;
+			case 6: six++;break;
+			}
+		}
+		for(int i=0;i<inn3.length;i++) {
+			switch(inn3[i]) {
+			case 0: zero++;break;
+			case 1: one++;break;
+			case 2: two++;break;
+			case 3: three++;break;
+			case 4: four++;break;
+			case 6: six++;break;
+			}
+		}
+		for(int i=0;i<inn4.length;i++) {
+			switch(inn4[i]) {
+			case 0: zero++;break;
+			case 1: one++;break;
+			case 2: two++;break;
+			case 3: three++;break;
+			case 4: four++;break;
+			case 6: six++;break;
+			}
+		}
+		for(int i=0;i<inn5.length;i++) {
+			switch(inn5[i]) {
+			case 0: zero++;break;
+			case 1: one++;break;
+			case 2: two++;break;
+			case 3: three++;break;
+			case 4: four++;break;
+			case 6: six++;break;
+			}
+		}
+		System.out.println("Total Number of Dot balls : "+zero);
+		System.out.println("Total Number of Ones: "+one);
+		System.out.println("Total Number of Twos : "+two);
+		System.out.println("Total Number of Threes : "+three);
+		System.out.println("Total Number of Fours : "+four);
+		System.out.println("Total Number of Sixes : "+six);
+		
+		int sr1=(t1/30)*100;
+		int sr2=(t2/30)*100;
+		int sr3=(t3/30)*100;
+		int sr4=(t4/30)*100;
+		int sr5=(t5/30)*100;
+		int avgsr=(sr1+sr2+sr3+sr4+sr5)/5;
+		System.out.println("Average Strike Rate : "+avgsr);
+	}
+}
