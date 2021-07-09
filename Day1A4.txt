@@ -1,0 +1,62 @@
+import java.text.DecimalFormat;
+import java.util.*;
+class Account{
+	DecimalFormat dec=new DecimalFormat("0.00");
+	private int accountNo;
+	private double accountBalance;
+	private String accountPassword;
+	private String bankName="SBI Bank";
+	Account() {};
+	Account(int id,double bal,String pass){
+		accountNo=id;
+		accountBalance=bal;
+		accountPassword=pass;
+	}
+	public String getbankName() {
+		return bankName;
+	}
+	public void setAccno(int id) {
+		accountNo=id;
+	}
+	public int getAccno() {
+		return accountNo;
+	}
+	public void setAccbal(double bal) {
+		accountBalance=bal;
+	}
+	public double getAccbal() {
+		return accountBalance;
+	}
+	public void setAccpass(String pass) {
+		accountPassword=pass;
+	}
+	public String getAccpass() {
+		return accountPassword;
+	}
+	public void displayAccount() {
+		System.out.println("Bank Name : "+bankName);
+		System.out.println("Account Number :"+accountNo);
+		System.out.println("Balance : "+dec.format(accountBalance));
+		System.out.println("Password : "+accountPassword);
+	}
+}
+class Day1A4{
+	public static void main(String[] args) {
+		DecimalFormat dec=new DecimalFormat("0.00");
+		
+		Account a1=new Account(6734,50000,"pass@123");
+		System.out.println("Bank Name : "+a1.getbankName());
+		System.out.println("Account Number : "+a1.getAccno());
+		System.out.println("Balance : "+dec.format(a1.getAccbal()));
+		System.out.println("Password : "+a1.getAccpass());
+		System.out.println("----------------------------");
+		Account a2=new Account();
+		a2.setAccno(8721);
+		a2.setAccbal(2000.01);
+		a2.setAccpass("abc123!");
+		
+		a2.displayAccount();
+		System.out.println("----------------------------");
+		
+	}
+}
